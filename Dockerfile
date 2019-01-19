@@ -1,6 +1,6 @@
-FROM alpine:3.5
+FROM alpine:3.7
 
-ENV RESTYABOARD_VERSION=v0.5 \
+ENV RESTYABOARD_VERSION=v0.6.6 \
     ROOT_DIR=/usr/share/nginx/html \
     CONF_DIR=/etc/nginx/conf.d \
     SMTP_DOMAIN=localhost \
@@ -36,7 +36,7 @@ RUN apk add --update \
     rm -rf /var/cache/apk/*
 
 RUN curl -L -s -o /etc/apk/keys/php-alpine.rsa.pub http://php.codecasts.rocks/php-alpine.rsa.pub && \
-    echo "http://php.codecasts.rocks/7.0" >> /etc/apk/repositories && \
+    echo "http://php.codecasts.rocks/v3.7/php-7.1" >> /etc/apk/repositories && \
     apk add --update php7-imagick && \
     rm -rf /var/cache/apk/*
 
