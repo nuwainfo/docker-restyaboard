@@ -81,8 +81,10 @@ RUN addgroup -g 82 -S www-data ; \
     chmod +x ${ROOT_DIR}/server/php/shell/*.sh && \
     sed -i "s|bin/bash|bin/sh|" ${ROOT_DIR}/server/php/shell/*.sh && \
     sed -i "s|php |php7 |g" ${ROOT_DIR}/server/php/shell/*.sh && \
+    sed -i -e 's/error_reporting = .*/error_reporting = E_ERROR | E_PARSE/g' /etc/php7/php.ini && \
     chown -R www-data:www-data /var/lib/nginx && \
     mkdir -p /run/nginx && \
+    chmod 777 -R /var/tmp/nginx && \
     mkdir -p /run/php
 
 # entrypoint
