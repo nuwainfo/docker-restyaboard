@@ -21,7 +21,7 @@ services:
       - postgres
     restart: always
   postgres:
-    image: kiasaki/alpine-postgres
+    image: onjin/alpine-postgres
     ports:
       - 5432:5432
     environment:
@@ -30,3 +30,5 @@ services:
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=restyaboard
     restart: always
+    volumes:
+      - /var/lib/postgresql/data:/var/lib/postgresql/data
