@@ -36,7 +36,7 @@ RUN apk add --update \
     rm -rf /var/cache/apk/*
 
 RUN curl -L -s -o /etc/apk/keys/php-alpine.rsa.pub http://php.codecasts.rocks/php-alpine.rsa.pub && \
-    echo "http://php.codecasts.rocks/v3.7/php-7.1" >> /etc/apk/repositories && \
+    echo "http://php.codecasts.rocks/v3.7/php-7.2" >> /etc/apk/repositories && \
     apk add --update php7-imagick && \
     rm -rf /var/cache/apk/*
 
@@ -69,7 +69,7 @@ RUN addgroup -g 82 -S www-data ; \
     sed -i "s|root.*html|root ${ROOT_DIR}|" ${CONF_DIR}/restyaboard.conf && \
     sed -i "s|user = nobody|user = www-data|" /etc/php7/php-fpm.d/www.conf && \
     sed -i "s|group = nobody|group = www-data|" /etc/php7/php-fpm.d/www.conf && \
-    sed -i "s|listen = 127.0.0.1:9000|listen = /run/php/php7.0-fpm.sock|" /etc/php7/php-fpm.d/www.conf && \
+    sed -i "s|listen = 127.0.0.1:9000|listen = /run/php/php7.2-fpm.sock|" /etc/php7/php-fpm.d/www.conf && \
     sed -i "s|;listen.owner = nobody|listen.owner = www-data|" /etc/php7/php-fpm.d/www.conf && \
     sed -i "s|;listen.group = nobody|listen.group = www-data|" /etc/php7/php-fpm.d/www.conf && \
     sed -i "s|;listen.mode = 0660|listen.mode = 0660|" /etc/php7/php-fpm.d/www.conf && \
