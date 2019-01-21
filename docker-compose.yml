@@ -6,6 +6,11 @@ services:
       - 1234:80
     volumes:
        - /var/opt/restya/media:/usr/share/nginx/html/media
+       - /var/opt/restya/img/large_thumb:/usr/share/nginx/html/client/img/large_thumb
+       - /var/opt/restya/img/micro_thumb:/usr/share/nginx/html/client/img/micro_thumb
+       - /var/opt/restya/img/small_thumb:/usr/share/nginx/html/client/img/small_thumb
+       - /var/opt/restya/img/normal_thumb:/usr/share/nginx/html/client/img/normal_thumb
+       - /var/opt/restya/img/medium_thumb:/usr/share/nginx/html/client/img/medium_thumb
     environment:
       - POSTGRES_HOST=postgres
       - POSTGRES_USER=admin
