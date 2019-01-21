@@ -61,7 +61,7 @@ do
   fi
   sleep 1
 done
-if [ "$(psql -c '\d')" = "Did not find any relations." ]; then
+if [ "$(psql -c '\d')" = "" ]; then
   psql -f "${ROOT_DIR}/sql/restyaboard_with_empty_data.sql"
 fi
 set -e
